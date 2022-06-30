@@ -22,16 +22,13 @@ services:
     volumes:
       - ./app:/var/www/html
   mysql:
-    image: mysql:5.7
+    build:
+      context: .
+      dockerfile: mysql.dockerfile
     container_name: mysql-database
     ports:
       - 3306:3306
     restart: on-failure
-    environment:
-      MYSQL_DATABASE: docker
-      MYSQL_USER: danny
-      MYSQL_PASSWORD: secret
-      MYSQL_ROOT_PASSWORD: secret
     volumes:
       - ./config/mysql:/var/lib/mysql
     working_dir: /var/www/html

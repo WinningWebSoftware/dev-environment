@@ -1,0 +1,6 @@
+FROM mysql:5.7
+
+ENV MYSQL_DATABASE="docker"
+ENV MYSQL_USER="danny"
+ENV MYSQL_PASSWORD="secret"
+ENV MYSQL_ROOT_PASSWORD="secret"
