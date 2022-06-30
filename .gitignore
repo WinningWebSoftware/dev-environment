@@ -1,4 +1,4 @@
 /.idea
 /app/vendor
-
+/config/mysql
 /vendor/
