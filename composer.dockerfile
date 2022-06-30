@@ -1,0 +1,6 @@
+FROM composer:2.3.7
+
+ENV COMPOSERUSER=admin
+ENV COMPOSERGROUP=admin
+
+RUN adduser -g ${COMPOSERGROUP} -s /bin/sh -D ${COMPOSERUSER}

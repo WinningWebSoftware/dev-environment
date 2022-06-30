@@ -1,0 +1,13 @@
+{
+  "name": "winningsoftware/project-name",
+  "description": "My project description.",
+  "authors": [
+    {
+      "name": "Winning Software",
+      "email": "admin@winningsoftware.co.uk"
+    }
+  ],
+  "minimum-stability": "dev",
+  "type": "project",
+  "license" : "MIT"
+}
