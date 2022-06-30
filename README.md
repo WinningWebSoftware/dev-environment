@@ -5,5 +5,6 @@ following services:
 - PHP
 - MySQL
 - Composer
+- Node & NPM
 
 Requires Docker Desktop to be installed on your system.

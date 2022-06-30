@@ -1,0 +1,14 @@
+{
+    "name": "winningsoftware/dev-environment",
+    "description": "A portable PHP development environment.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Danny Winning",
+            "email": "danny@winningsoftware.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
