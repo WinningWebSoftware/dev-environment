@@ -5,3 +5,5 @@ following services:
 - PHP
 - MySQL
 - Composer
+
+Requires Docker Desktop to be installed on your system.
