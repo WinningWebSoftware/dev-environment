@@ -7,7 +7,7 @@ services:
     ports:
       - 80:80
       - 443:443
-    container_name: php-server
+    container_name: project_name-php-server
     volumes:
       - ./app:/var/www/html
       - ./config/nginx:/etc/nginx/conf.d
@@ -18,19 +18,17 @@ services:
     build:
       context: .
       dockerfile: php.dockerfile
-    container_name: php-8.1
+    container_name: project_name-php-8.1
     volumes:
       - ./app:/var/www/html
   mysql:
     image: mysql:5.7
-    container_name: mysql-database
+    container_name: project_name-mysql-database
     ports:
       - 3306:3306
     restart: on-failure
     environment:
       MYSQL_DATABASE: docker
-      MYSQL_USER: danny
-      MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
     volumes:
       - ./config/mysql:/var/lib/mysql
@@ -39,11 +37,13 @@ services:
     build:
       context: .
       dockerfile: composer.dockerfile
+    container_name: project_name-composer
     volumes:
       - ./app:/var/www/html
     working_dir: /var/www/html
   node:
     image: node:18
+    container_name: project_name-node
     volumes:
       - ./app:/var/www/html
     working_dir: /var/www/html
