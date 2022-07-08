@@ -32,6 +32,10 @@ directory. Move into your project directory and run setup:
 cd project-name && composer install
 ```
 
+Before building your containers, open `docker-compose.yml` and do a find and replace for
+`project_name` and replace it with your prefix/project name. This prevents container
+name conflicts if you are using this dev environment for multiple projects.
+
 In order to create your environment and build your containers run the following
 command:
 
