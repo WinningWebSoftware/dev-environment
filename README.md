@@ -32,15 +32,39 @@ directory. Move into your project directory and run setup:
 cd project-name && composer install
 ```
 
-Before building your containers, open `docker-compose.yml` and do a find and replace for
-`project_name` and replace it with your prefix/project name. This prevents container
-name conflicts if you are using this dev environment for multiple projects.
+As of version 1.1.0, you can now run the following command to automatically update your
+`docker-compose.yml` file:
+
+```
+php setup.php
+```
+
+This will update your `docker-compose.yml` file to automatically name your container images
+based on your project name. If you would like to specify a different name, you can simply append
+this to the command:
+
+```
+php setup.php project_name
+```
+
+You can also install Laravel using the same command, specifying a `type`:
+
+```
+php setup.php project_name type=laravel
+```
+
+This will install a new Laravel project in the app directory.
+
+If you do not wish to use the setup script, you can manually update your `docker-compose.yml` 
+file. Open the file and do a find and replace for`project_name` and replace it with your 
+prefix/project name. This prevents container name conflicts if you are using this dev environment 
+for multiple projects.
 
 In order to create your environment and build your containers run the following
 command:
 
 ```
-docker-compose up --build
+docker-compose up --build -d
 ```
 
 This will create images for each of our separate services and then boot
