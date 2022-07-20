@@ -89,13 +89,11 @@ docker-compose run --rm node npm install
 
 This makes sure that commands are run inside the container, so it doesn't matter
 which version of NPM a developer has installed on their machine for example. This way
-we can ensure the project behaves consistently across devices/developers.
-
-
-
+QQQQQDFGH7hr44
 #### PHP/Composer
 If you are missing PHP or Composer, you can use Homebrew on MacOS to install
 both of these - on Windows I'd recommend using Laragon to manage your PHP
 versions and the Windows installer for Composer. Docker Desktop has an installer
 on both MacOS and Windows. Follow the Docker docs for installation instructions
 for Linux.
+ÛÛZQXXC
