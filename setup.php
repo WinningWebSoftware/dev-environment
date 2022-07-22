@@ -11,3 +11,4 @@ $project = new Project();
 $args = new Arguments($argv);
 
 Console::writeLine("Welcome to the Dev Environment Setup Tool!", ConsoleStyles::GREEN);
+Console::writeLine("This tool will help you setup your project.", ConsoleStyles::BLUE);
