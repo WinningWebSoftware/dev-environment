@@ -1,11 +1,17 @@
 <?php
 
+use DevEnvironment\Helpers\StringHelper;
+
+require_once __DIR__ . "/vendor/autoload.php";
+
+var_dump(StringHelper::getProjectNameFromPath(dirname(__FILE__)));
+exit;
 unset($argv[0]);
 $args = array_values($argv);
 $projectName = "";
 
 if (!count($args)) {
-    $projectName = getProjectNameFromPath();
+    $projectName = StringHelper::getProjectNameFromPath(dirname(__FILE__));
     updateDockerComposeConfig($projectName);
 } else {
     if (count($args) > 2) {
@@ -14,7 +20,7 @@ if (!count($args)) {
 
     if (count($args) === 1) {
         if (str_contains($args[0], "type=")) {
-            $projectName = getProjectNameFromPath();
+            $projectName = StringHelper::getProjectNameFromPath(dirname(__FILE__));
         } else {
             $projectName = $args[0];
         }
@@ -49,10 +55,4 @@ function updateDockerComposeConfig(string $projectName): void
     $dockerComposeConfig = file_get_contents($dockerComposeConfigPath);
     $dockerComposeConfig = str_replace("project_name", $projectName, $dockerComposeConfig);
     file_put_contents($dockerComposeConfigPath, $dockerComposeConfig);
-}
-
-function getProjectNameFromPath(): string
-{
-    $projectNameArray = explode("/", dirname(__FILE__));
-    return end($projectNameArray);
 }
